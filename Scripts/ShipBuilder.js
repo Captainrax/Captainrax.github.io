@@ -438,6 +438,15 @@ function Ship_nav(){
     var Industry = document.querySelector("#industry");
     var Skins = document.querySelector("#skins");
     
+    Traits.style.display = "block";
+    Description.style.display = "none";
+    Attributes.style.display = "none";
+    Fitting.style.display = "none";
+    Requirements.style.display = "none";
+    Mastery.style.display = "none";
+    Variations.style.display = "none";
+    Industry.style.display = "none";
+    Skins.style.display = "none";
     Ship_Traits.addEventListener("click", function(){
         Traits.style.display = "block";
         Description.style.display = "none";
@@ -562,7 +571,10 @@ function InsertData(data){
     for(x in data["dogma_attributes"]){
         var desc = document.querySelector("#description_text");
         desc.textContent = data["description"];
-
+        
+        var Capacity = document.querySelector("#AT4");
+        Capacity.textContent = data["capacity"] + " m3";
+        
         switch(data["dogma_attributes"][x]["attribute_id"]){
             case 4:
                     var testdata = document.querySelector("#AT10");
@@ -606,10 +618,10 @@ function InsertData(data){
                     var pack = data["packaged_volume"];
                     testdata.textContent += " (" + pack + " m3 Packaged)";
                 break;
-            case 482:
-                    var testdata = document.querySelector("#AT4");
-                    testdata.textContent = data["dogma_attributes"][x]["value"] + " m3";
-                break;
+            // case 482:  capacitor capacity
+            //         var testdata = document.querySelector("#AT4");
+            //         testdata.textContent = data["dogma_attributes"][x]["value"] + " m3";
+            //     break;
             case 283:
                     if(data["dogma_attributes"][x]["value"] != 0){
                         Attribute_Drone(true);
@@ -636,10 +648,10 @@ function InsertData(data){
 }
 function DisplayError(){
     for(var x = 0; x < 100; x++){
-        var testdata = document.querySelector("#AT"+x);
-        if (testdata.innerHTML === ""){
-            var testdata = document.querySelector("#AT"+x);
-            testdata.textContent = "Error";
+        var Testdata = document.querySelector("#AT"+x);
+        if (Testdata.innerHTML === ""){
+            var Testdata = document.querySelector("#AT"+x);
+            Testdata.textContent = "Error";
         }
     }
 }

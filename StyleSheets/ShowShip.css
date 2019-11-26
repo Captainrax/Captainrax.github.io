@@ -1,8 +1,8 @@
 #ship_div {
     display: block;
     position: absolute;
-    top: 5vh;
-    left: 40vw;
+    top: 12vh;
+    left: 35vw;
     background-color:rgba(10, 10, 10, 0.8);
     height: 500px;
     width: 500px;
