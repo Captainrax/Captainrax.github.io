@@ -6,23 +6,25 @@
         <link href="StyleSheets/Caldari_Index.css" rel="stylesheet" />
         <link href="StyleSheets/Caldari_Index_Lines.css" rel="stylesheet" />
         <link href="StyleSheets/ShowShip.css" rel="stylesheet" />
-        <!-- might need defer -->
-        <script src="Scripts/Libraries/jquery-3.5.1.js"></script>
+
+        <script src="Scripts/Libraries/jquery-3.5.1.js" defer></script>
         <script src="Scripts/Caldari_EventListeners.js" defer></script>
         <script src="Scripts/DraggableDiv.js" defer></script>
         <script src="Scripts/ShipBuilder.js" defer></script>
         <script src="Scripts/Caldari_Ship_Info.js" defer></script>
+        <script src="Scripts/SearchBar.js" defer></script>
 
         <title>EVE Ship Tree - Caldari</title>
 </head>
 
 <body id="background">
         <div class="faction_menu">
+                <input type="text" class="menu_searchbar" placeholder="Search New Eden">
                 <ul class="menu_navbar" id="faction_menu_ul">
                         <li class="menu_tab"><a href="Amarr.html"><img src="StyleSheets/icons/amarr.png"></a></li>
                         <li class="menu_tab faction_active"><a href="index.html"><img src="StyleSheets/icons/caldari.png" alt=""></a></li>
                         <li class="menu_tab"><a href="Gallente.html"><img src="StyleSheets/icons/gallente.png" alt=""></a></li>
-                        <li class="menu_tab"><a href="#Minmatar.html"><img src="StyleSheets/icons/minmatar.png" alt=""></a></li>
+                        <li class="menu_tab"><a href="Minmatar.html"><img src="StyleSheets/icons/minmatar.png" alt=""></a></li>
                         <li class="menu_tab"><a href="ORE.html"><img src="StyleSheets/icons/ORE.png" alt=""></a></li>
                         <li class="menu_tab"><a href="#yep... nothing here."><img src="StyleSheets/icons/guristas.png" alt=""></a></li>
                         <li class="menu_tab"><a href="#about"><img src="StyleSheets/icons/sansha.png" alt=""></a></li>

@@ -79,6 +79,7 @@ var Titan1 = document.querySelector("#showship_titan1");
 
 var Freighter = document.querySelector("#showship_freighter");
 var T2_Freighter = document.querySelector("#showship_t2_freighter");
+
 var pagecount = false;
 
 

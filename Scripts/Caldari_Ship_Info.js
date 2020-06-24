@@ -141,6 +141,28 @@ Charon.seticon("Scripts/Caldari_Data/images/doot.png");
 var Rhea = new Ship("Rhea", "Freighter");
 Rhea.seticon("Scripts/Caldari_Data/images/Rhea.png");
 
+// fetch data function, uses ShipBuilder.js InsertData function
+function FetchData(FilePath){
+
+    fetch(FilePath)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        appendData(data);
+    })
+    .catch(function (err) {
+        console.log('error: ' + err);
+        DisplayError();
+    });
+    function appendData(data) {
+       InsertData(data);
+    }
+}
+
+
+
+
 function ibis(){
     
     var Content_Traits = document.querySelector("#traits");
@@ -256,20 +278,7 @@ function ibis(){
     Traits_Bonus_Div4.appendChild(Traits_Bonus_Item4);
     Traits_Bonus_Div4.appendChild(Traits_Bonus_Text42);
 
-    fetch("Scripts/Caldari_Data/IbisData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-       InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/IbisData.json");
 }
 
 function shuttle(){
@@ -294,20 +303,7 @@ function shuttle(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/Caldari_ShuttleData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/Caldari_ShuttleData.json");
 }
 
 function bantam(){
@@ -411,20 +407,7 @@ function bantam(){
     Traits_Bonus_Div3.appendChild(Traits_Bonus_Item3);
     Traits_Bonus_Div3.appendChild(Traits_Bonus_Text32);
 
-    fetch("Scripts/Caldari_Data/BantamData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-       InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/BantamData.json");
 }
 
 function condor(){
@@ -449,20 +432,7 @@ function condor(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/CondorData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/CondorData.json");
 }
 
 function griffin(){
@@ -487,20 +457,7 @@ function griffin(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/GriffinData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/GriffinData.json");
 }
 // Kestrel
 function kestrel(){
@@ -526,20 +483,7 @@ function kestrel(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/KestrelData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/KestrelData.json");
 }
 
 function merlin(){
@@ -564,20 +508,7 @@ function merlin(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/MerlinData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/MerlinData.json");
 }
 
 function heron(){
@@ -601,20 +532,7 @@ function heron(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/HeronData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/HeronData.json");
 }
 
 function kirin(){
@@ -639,20 +557,7 @@ function kirin(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/KirinData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/KirinData.json");
 }
 
 function kitsune(){
@@ -677,20 +582,7 @@ function kitsune(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/KitsuneData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/KitsuneData.json");
 }
 
 function buzzard(){
@@ -715,20 +607,7 @@ function buzzard(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/BuzzardData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/BuzzardData.json");
 }
 
 function manticore(){
@@ -753,20 +632,7 @@ function manticore(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/ManticoreData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/ManticoreData.json");
 }
 
 function hawk(){
@@ -791,20 +657,7 @@ function hawk(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/HawkData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/HawkData.json");
 }
 
 function harpy(){
@@ -829,20 +682,7 @@ function harpy(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/HarpyData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/HarpyData.json");
 }
 
 function crow(){
@@ -867,20 +707,7 @@ function crow(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/CrowData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/CrowData.json");
 }
 
 function raptor(){
@@ -905,20 +732,7 @@ function raptor(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/RaptorData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/RaptorData.json");
 }
 
 function griffin_navy(){
@@ -943,20 +757,7 @@ function griffin_navy(){
     Traits_img7.src = "StyleSheets/icons/ECM.png";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/Griffin_NavyData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/Griffin_NavyData.json");
 }
 
 function hookbill(){
@@ -981,20 +782,7 @@ function hookbill(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/HookbillData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/HookbillData.json");
 }
 
 function cormorant(){
@@ -1019,20 +807,7 @@ function cormorant(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/CormorantData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/CormorantData.json");
 }
 
 function corax(){
@@ -1057,21 +832,7 @@ function corax(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/CoraxData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/CoraxData.json");
 }
 
 function flycatcher(){
@@ -1096,21 +857,7 @@ function flycatcher(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/FlycatcherData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/FlycatcherData.json");
 }
 
 function stork(){
@@ -1135,21 +882,7 @@ function stork(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/StorkData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/StorkData.json");
 }
 function jackdaw(){
 
@@ -1173,21 +906,7 @@ function jackdaw(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/JackdawData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/JackdawData.json");
 }
 function osprey(){
 
@@ -1211,21 +930,7 @@ function osprey(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/OspreyData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/OspreyData.json");
 }
 function caracal(){
 
@@ -1249,21 +954,7 @@ function caracal(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/CaracalData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/CaracalData.json");
 }
 function blackbird(){
 
@@ -1287,21 +978,7 @@ function blackbird(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/BlackbirdData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/BlackbirdData.json");
 }
 function moa(){
 
@@ -1325,21 +1002,7 @@ function moa(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/MoaData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/MoaData.json");
 }
 function osprey_navy(){
 
@@ -1363,21 +1026,7 @@ function osprey_navy(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/Osprey_NavyData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/Osprey_NavyData.json");
 }
 function caracal_navy(){
 
@@ -1401,21 +1050,7 @@ function caracal_navy(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/Caracal_NavyData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/Caracal_NavyData.json");
 }
 function basilisk(){
 
@@ -1439,21 +1074,7 @@ function basilisk(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/BasiliskData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/BasiliskData.json");
 }
 function onyx(){
 
@@ -1477,21 +1098,7 @@ function onyx(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/OnyxData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/OnyxData.json");
 }
 function eagle(){
 
@@ -1515,21 +1122,7 @@ function eagle(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/EagleData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/EagleData.json");
 }
 function cerberus(){
 
@@ -1553,21 +1146,7 @@ function cerberus(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/CerberusData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/CerberusData.json");
 }
 function rook(){
 
@@ -1591,21 +1170,7 @@ function rook(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/RookData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/RookData.json");
 }
 function falcon(){
 
@@ -1629,21 +1194,7 @@ function falcon(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/FalconData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/FalconData.json");
 }
 function tengu(){
 
@@ -1667,21 +1218,7 @@ function tengu(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/TenguData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/TenguData.json");
 }
 function ferox(){
 
@@ -1705,21 +1242,7 @@ function ferox(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/FeroxData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/FeroxData.json");
 }
 function drake(){
 
@@ -1743,21 +1266,7 @@ function drake(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/DrakeData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/DrakeData.json");
 }
 function naga(){
 
@@ -1781,21 +1290,7 @@ function naga(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/NagaData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/NagaData.json");
 }
 function drake_navy(){
 
@@ -1819,21 +1314,7 @@ function drake_navy(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/Drake_NavyData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/Drake_NavyData.json");
 }
 function nighthawk(){
 
@@ -1857,21 +1338,7 @@ function nighthawk(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/NighthawkData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/NighthawkData.json");
 }
 function vulture(){
 
@@ -1895,21 +1362,7 @@ function vulture(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/VultureData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/VultureData.json");
 }
 function badger(){
 
@@ -1933,21 +1386,7 @@ function badger(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/BadgerData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/BadgerData.json");
 }
 function tayra(){
 
@@ -1971,21 +1410,7 @@ function tayra(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/TayraData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/TayraData.json");
 }
 function crane(){
 
@@ -2009,21 +1434,7 @@ function crane(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/CraneData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/CraneData.json");
 }
 function bustard(){
 
@@ -2047,21 +1458,7 @@ function bustard(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/BustardData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/BustardData.json");
 }
 function scorpion(){
 
@@ -2085,21 +1482,7 @@ function scorpion(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/ScorpionData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/ScorpionData.json");
 }
 function rokh(){
 
@@ -2123,21 +1506,7 @@ function rokh(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/RokhData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/RokhData.json");
 }
 function raven(){
 
@@ -2161,21 +1530,7 @@ function raven(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/RavenData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/RavenData.json");
 }
 function scorpion_navy(){
 
@@ -2199,21 +1554,7 @@ function scorpion_navy(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/Scorpion_NavyData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/Scorpion_NavyData.json");
 }
 function raven_navy(){
 
@@ -2237,21 +1578,7 @@ function raven_navy(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/Raven_NavyData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/Raven_NavyData.json");
 }
 function widow(){
 
@@ -2275,21 +1602,7 @@ function widow(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/WidowData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/WidowData.json");
 }
 function golem(){
 
@@ -2313,21 +1626,7 @@ function golem(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/GolemData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/GolemData.json");
 }
 function phoenix(){
 
@@ -2351,21 +1650,7 @@ function phoenix(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/PhoenixData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/PhoenixData.json");
 }
 function minokawa(){
 
@@ -2389,21 +1674,7 @@ function minokawa(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/MinokawaData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/MinokawaData.json");
 }
 function wyvern(){
 
@@ -2427,21 +1698,7 @@ function wyvern(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/WyvernData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/WyvernData.json");
 }
 function chimera(){
 
@@ -2465,21 +1722,7 @@ function chimera(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/ChimeraData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/ChimeraData.json");
 }
 function leviathan(){
 
@@ -2503,21 +1746,7 @@ function leviathan(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/LeviathanData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/LeviathanData.json");
 }
 function charon(){
 
@@ -2541,21 +1770,7 @@ function charon(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/CharonData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/CharonData.json");
 }
 function rhea(){
 
@@ -2579,21 +1794,5 @@ function rhea(){
     Traits_img7.style.display = "none";
     Traits_img8.style.display = "none";
 
-    fetch("Scripts/Caldari_Data/RheaData.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        appendData(data);
-    })
-    .catch(function (err) {
-        console.log('error: ' + err);
-        DisplayError();
-    });
-    function appendData(data) {
-        //From ShipBuilder.js
-        InsertData(data);
-    }
+    FetchData("Scripts/Caldari_Data/RheaData.json");
 }
-
-
